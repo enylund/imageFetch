@@ -2,24 +2,25 @@
   include_once 'simple_html_dom.php';
 
     // THIS IS A COMMENT. IT WONT RUN
-    fetchImages("https://www.artforum.com/","artforum");
+    // fetchImages("https://www.artforum.com/","artforum");
     // fetchImages("https://www.ft.com/","financial-times");
-    // fetchImages("https://www.nytimes.com/","nytimes");
+    fetchImages("https://www.nytimes.com/","nytimes");
     // fetchImages("http://www.spiegel.de/international/","spiegel");
     // fetchImages("https://nypost.com/","nypost");
     // fetchImages("https://www.bloomberg.com/","bloomberg");
     // fetchImages("https://www.ft.com/","financial-times");
     // fetchImages("http://www.dailymail.co.uk/ushome/index.html","dailymail");
+    // fetchImages("https://www.artforum.com/","artforum");
 
 
     function fetchImages($url, $directory) {
 
-      $page           = $_REQUEST['page'];
-      $html           = file_get_html($url.$page);
+      $html           = file_get_html($url);
       $imageDirectory = "img/".$directory;
       $date           = date("Y-m-d");
       $dateDirectory  = $imageDirectory."/".$date;
       $regexImageName = '/[\w\.\-\$]+(?=png|jpg|gif)\w+/';
+
 
       if ( !file_exists($imageDirectory) ) {
         mkdir ($imageDirectory);
@@ -41,7 +42,9 @@
 
       // Find all images
       foreach($html->find('img') as $img) {
-
+        // echo '<pre>';
+        // var_dump($img);
+        // echo '</pre>';
         preg_match_all($regexImageName, $img->src, $matches, PREG_SET_ORDER, 0);
 
         $filename = $dateDirectory."/".$matches[0][0];
@@ -55,7 +58,6 @@
             fwrite($fp, $content);
             fclose($fp);
         }
-
       }
 
       // Start Cache Footer
