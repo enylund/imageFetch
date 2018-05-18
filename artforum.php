@@ -1,7 +1,9 @@
 <?php
   include_once 'simple_html_dom.php';
 
-    fetchImages("http://www.joblo.com/movie-posters/","joblo");
+    // THIS IS A COMMENT. IT WONT RUN
+    fetchImages("https://www.artforum.com/","artforum");
+
 
     function fetchImages($url, $directory) {
 
@@ -9,7 +11,7 @@
       $imageDirectory = "img/".$directory;
       $date           = date("Y-m-d");
       $dateDirectory  = $imageDirectory."/".$date;
-      $regexImageName = '/[\w\.\-\$]+(?=png|jpg|gif)\w+/';
+      $regexImageName = '/[\w\.\-\$]+\/[\w\.\-\$]+(?=png|jpg|gif)\w+/';
 
 
       if ( !file_exists($imageDirectory) ) {
@@ -30,17 +32,20 @@
       ob_start(); // start the output buffer
       // End Cache Head
 
-      // Find all images
-      foreach($html->find('img') as $img) {
-        var_dump($img->src.'<br>');
-        preg_match_all($regexImageName, $img->src, $matches, PREG_SET_ORDER, 0);
+      $bloglistArray = $html->find('.hp-bloglist__image');
 
-        $filename = $dateDirectory."/".$matches[0][0];
+      // Find all images
+      foreach($bloglistArray as $img) {
+
+        preg_match_all($regexImageName, 'https://www.artforum.com/'.$img->src, $matches, PREG_SET_ORDER, 0);
+        echo($matches[0][0]);
+        $final_match = str_replace('/','-',$matches[0][0]);
+        $filename = $dateDirectory."/".$final_match;
 
         if ( !file_exists($filename) ) {
             //Get the file
-            echo('<img src="http://www.joblo.com/'.$img->src.'">');
-            $content = file_get_contents("http://www.joblo.com/".$img->src);
+            echo('<img src="https://www.artforum.com/'.$img->src.'">');
+            $content = file_get_contents('https://www.artforum.com/'.$img->src);
             //Store in the filesystem.
             $fp = fopen($filename, "w");
             fwrite($fp, $content);

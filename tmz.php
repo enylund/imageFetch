@@ -1,7 +1,7 @@
 <?php
   include_once 'simple_html_dom.php';
 
-    fetchImages("http://www.joblo.com/movie-posters/","joblo");
+    fetchImages("http://www.tmz.com/?adid=TMZ_Web_Nav_News","tmz");
 
     function fetchImages($url, $directory) {
 
@@ -32,15 +32,15 @@
 
       // Find all images
       foreach($html->find('img') as $img) {
-        var_dump($img->src.'<br>');
+
         preg_match_all($regexImageName, $img->src, $matches, PREG_SET_ORDER, 0);
 
         $filename = $dateDirectory."/".$matches[0][0];
 
         if ( !file_exists($filename) ) {
             //Get the file
-            echo('<img src="http://www.joblo.com/'.$img->src.'">');
-            $content = file_get_contents("http://www.joblo.com/".$img->src);
+            echo('<img src="'.$img->src.'">');
+            $content = file_get_contents($img->src);
             //Store in the filesystem.
             $fp = fopen($filename, "w");
             fwrite($fp, $content);
