@@ -18,16 +18,22 @@
     return $rand_sub_folder.'/'.$rand_image;
   }
 
-  $final_path = fetchPath();
+  $bottom_image_path = fetchPath();
   $regexImageName = '/[\w\.\-\$]+(?=png|jpg|gif)\w+/';
-  preg_match_all($regexImageName, $final_path, $matches, PREG_SET_ORDER, 0);
+  preg_match_all($regexImageName, $bottom_image_path, $bottom_image_matches, PREG_SET_ORDER, 0);
 
-  while (empty($matches)) {
-    $final_path = fetchPath();
-    preg_match_all($regexImageName, $final_path, $matches, PREG_SET_ORDER, 0);
+  while (empty($bottom_image_matches)) {
+    $bottom_image_path = fetchPath();
+    preg_match_all($regexImageName, $bottom_image_path, $bottom_image_matches, PREG_SET_ORDER, 0);
   }
 
-  print_r($final_path);
+  $top_image_path = fetchPath();
+  preg_match_all($regexImageName, $top_image_path, $top_image_matches, PREG_SET_ORDER, 0);
+
+  while (empty($top_image_matches)) {
+    $top_image_path = fetchPath();
+    preg_match_all($regexImageName, $top_image_path, $top_image_matches, PREG_SET_ORDER, 0);
+  }
 ?>
 
 <!DOCTYPE html>
@@ -35,20 +41,24 @@
 <!--[if IE 7]><html class="preIE8 preIE9"><![endif]-->
 <!--[if IE 8]><html class="preIE9"><![endif]-->
 <!--[if gte IE 9]><!-->
-<html style="background: url(<?php echo $final_path ?>) no-repeat center center fixed;background-size: cover; background-color: red;
+<html style="background: url(<?php echo $bottom_image_path ?>) no-repeat center center fixed;background-size: cover; background-color: red;
   background-blend-mode: multiply;"><!--<![endif]-->
   <head>
     <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Image Fetch</title>
-  <meta name="author" content="name">
-  <meta name="description" content="description here">
-  <meta name="keywords" content="keywords,here">
-  <link rel="stylesheet" href="assets/main.css" type="text/css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Image Fetch</title>
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+    <link rel="stylesheet" type="text/css" href="assets/main.css">
   </head>
   <body>
-    <div class="background-image"></div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <div class="context-info">
+      <div class="path-wrapper"><?php echo $bottom_image_path ?></div>
+      <div class="timer-wrapper"></div>
+    </div>
+    <canvas id="image-canvas" data-path="/image-fetch/<?php echo $top_image_path ?>"></canvas>
+    <script src="assets/main.js" type="text/javascript"></script>
   </body>
 </html>
