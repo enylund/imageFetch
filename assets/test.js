@@ -15,7 +15,9 @@ init = function (callback) {
                     'img/infowars/2018-05-24/12-7-17-trump-mueller-610x320.jpg',
                     'img/thesource/2018-05-22/LL-Cool-J-Inspired-to-Raise-Money-for-Cancer-Research-Following-Wifes-Diagnosis.jpg',
                     'img/techradar/2018-05-18/4a71110f1759755d76e5095a0f135051-320-80.jpg',
-                    'img/nationalenquirer/2018-05-18/robert-kennedy-rfk-rose-love-child-f.jpg'
+                    'img/nationalenquirer/2018-05-18/robert-kennedy-rfk-rose-love-child-f.jpg',
+                    'img/wired/2018-05-18/Deadpool2Review.jpg'
+                    //'img/nypost/2018-05-19/at_sea_missing_ship.jpg'
                     ];
 
     img          = new Image();
@@ -25,7 +27,8 @@ init = function (callback) {
     x            = 0;
     callback(img);
 },
-draw = function draw() {
+draw = function() {
+    canvas.style.display = 'none';
     ctx.clearRect(0, 0, clearX, clearY); // clear the canvas
 
     // draw image
@@ -33,7 +36,7 @@ draw = function draw() {
     img.style.display = 'none';
     var imageData     = ctx.getImageData(0, 0, canvas.width, canvas.height);
     var data          = imageData.data;
-    console.log(data)
+
     if (x < data.length) {
         for (var i = 0; i < data.length; i += 4) {
           if (i > x){
@@ -47,6 +50,7 @@ draw = function draw() {
           }
         }
         ctx.putImageData(imageData, 0, 0);
+        canvas.style.display = 'block';
         x += 2000;
     } else if ( x >= data.length && x <= data.length * 2 ) {
         console.log(x);
@@ -62,6 +66,7 @@ draw = function draw() {
           }
         }
         ctx.putImageData(imageData, 0, 0);
+        canvas.style.display = 'block';
         x += 2000;
 
     } else {
@@ -79,6 +84,7 @@ canvasSetup = function(img){
 
         // get canvas context
         canvas        = document.getElementById('image-canvas')
+        canvas.style.display = 'none';
         ctx           = canvas.getContext('2d');
         canvas.width  = imgW;
         canvas.height = imgH;
