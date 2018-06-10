@@ -1,18 +1,17 @@
 # Remaining tasks
 
   1) Get following sites to return images:
-    The Nib
-    Daily Kos
-    4chan
-    MTV *
-    Buzzfeed *
-    Gizmodo *
-    Vice **
-    CNN **
-    XHamster *
-    Tech Crunch **
-    Tech Radar **
-    At&t **
+    The Nib  
+    4chan  
+    MTV *  
+    Buzzfeed *  
+    Gizmodo *  
+    Vice **  
+    CNN **  
+    XHamster *  
+    Tech Crunch **  
+    Tech Radar **  
+    At&t **  
 
   2) Simplify cron job script for duplicates
   3) _Later:_ Stop downloading images without content
