@@ -51,10 +51,15 @@ One porn site to come
 reveal text about the site  
 Fade two images  
 Finalize time rates  
+Resize canvas if too small  
 
 # Question   
 Best place to limit non-existant images? Front-end of backend?   
 
 # Research    
 HTML -> PDF [Article](https://ourcodeworld.com/articles/read/226/top-5-best-open-source-pdf-generation-libraries-for-php)
+
+# Refresh  
+Bottom: 1.5s  
+Top:  Tickertap speed. Fast enough to still have a flicker. (var speed = 60 @ 40000pxs)  
 
