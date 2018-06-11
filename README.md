@@ -11,8 +11,10 @@
     At&t **  
     
     Can't get:
-    The Nib - Made with react ** 
-    CNN - Made with react **  
+    The Nib - Made with react 
+    CNN - Made with react  
+    Buzzfeed - Prevents scraping  
+    
 
   2) Simplify cron job script for duplicates
   3) _Later:_ Stop downloading images without content
