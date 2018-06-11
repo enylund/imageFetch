@@ -3,7 +3,6 @@
   1) Get following sites to return images:
     The Nib  
     4chan  
-    MTV *  
     Buzzfeed *  
     Gizmodo *  
     Vice **  
