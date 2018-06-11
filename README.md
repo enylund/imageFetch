@@ -1,23 +1,51 @@
-# Remaining tasks
+# Currently Scraping
+Africa News
+Al Jazeera
+Artforum
+Breitbart
+Dailykos
+Dailymail
+Espn
+Fox News
+Gamespot
+Gun Warehouse
+Hip Hop DX
+IGN
+Infowars
+joblo
+MTV
+National Enquirer
+NY Post
+NY Times
+Tech Radar
+The Source
+The Verge
+Time
+TMZ
+Washington Times
+Wired
 
-  1) Get following sites to return images:
-    4chan  
-    Gizmodo *  
-    Vice **  
-    XHamster *  
-    Tech Crunch **  
-    Tech Radar **  
-    At&t **  
-    
-    Can't get:
-    The Nib - Made with react 
-    CNN - Made with react  
-    Buzzfeed - Prevents scraping  
-    4chan - Prevents scraping  
-    
 
-  2) Simplify cron job script for duplicates
-  3) _Later:_ Stop downloading images without content
-  4) _Later:_ Down the resolution of giant images
-  5) _Later:_ Make sure PDFs get saved
-  5) Get chronjob working online
+# Can't get   
+The Nib - Made with react 
+CNN - Made with react  
+Buzzfeed - Prevents scraping  
+4chan - Prevents scraping  
+Tech Crunch - Made with react  
+4chan - Prevents scraping  
+Gizmodo - Prevents scraping  
+Vice - Prevents scraping  
+XHamster - Prevents scraping  
+At&t - Prevents scraping  
+    
+# Remaining Tasks
+Simplify cron job script for duplicates
+_Later:_ Stop downloading images without content
+_Later:_ Down the resolution of giant images
+_Later:_ Make sure PDFs get saved
+Get chronjob working online
+Technical text
+
+# Question
+Best place to limit non-existant images? Front-end of backend?
+
