@@ -1,16 +1,18 @@
 # Remaining tasks
 
   1) Get following sites to return images:
-    The Nib  
     4chan  
     Buzzfeed *  
     Gizmodo *  
     Vice **  
-    CNN **  
     XHamster *  
     Tech Crunch **  
     Tech Radar **  
     At&t **  
+    
+    Can't get:
+    The Nib - Made with react ** 
+    CNN - Made with react **  
 
   2) Simplify cron job script for duplicates
   3) _Later:_ Stop downloading images without content
