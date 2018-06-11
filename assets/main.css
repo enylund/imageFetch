@@ -1,5 +1,6 @@
 .context-info {
   z-index: 1000;
+  position: absolute;
   font-family: arial, helvetica, sans-serif;
   font-size:1.25vw;
   color: white;
@@ -16,10 +17,25 @@
   float:left;
 }
 
+.image-one {
+  z-index: 2;
+}
+.image-two {
+  z-index: 1;
+}
+
+.image-one, .image-two {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin: -8px;
+  padding: 0px;
+  margin: -8px;
+}
 
 
 #image-canvas {
-  z-index: -1;
+  z-index: 3;
   position: absolute;
   top: 50%;
   left: 50%;

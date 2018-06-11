@@ -17,11 +17,10 @@ init = function (callback) {
                     'img/techradar/2018-05-18/4a71110f1759755d76e5095a0f135051-320-80.jpg',
                     'img/nationalenquirer/2018-05-18/robert-kennedy-rfk-rose-love-child-f.jpg',
                     'img/wired/2018-05-18/Deadpool2Review.jpg'
-                    //'img/nypost/2018-05-19/at_sea_missing_ship.jpg'
                     ];
 
     img          = new Image();
-    img.src      = srcArray[Math.floor(Math.random()*srcArray.length)];;
+    img.src      = srcArray[Math.floor(Math.random()*srcArray.length)];
     CanvasXSize  = img.naturalWidth;
     CanvasYSize  = img.naturalHeight;
     x            = 0;
@@ -53,7 +52,6 @@ draw = function() {
         canvas.style.display = 'block';
         x += 10000;
     } else if ( x >= data.length && x <= data.length * 2 ) {
-        console.log(x);
         for (var i = 0; i < data.length; i += 4) {
           if (i + data.length < x){
             data[i + 3] = 1;
