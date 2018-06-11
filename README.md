@@ -1,29 +1,29 @@
 # Currently Scraping
-Africa News
-Al Jazeera
-Artforum
-Breitbart
-Dailykos
-Dailymail
-Espn
-Fox News
-Gamespot
-Gun Warehouse
-Hip Hop DX
-IGN
-Infowars
-joblo
-MTV
-National Enquirer
-NY Post
-NY Times
-Tech Radar
-The Source
-The Verge
-Time
-TMZ
-Washington Times
-Wired
+Africa News   
+Al Jazeera   
+Artforum   
+Breitbart   
+Dailykos   
+Dailymail   
+Espn   
+Fox News   
+Gamespot   
+Gun Warehouse   
+Hip Hop DX   
+IGN   
+Infowars   
+joblo   
+MTV   
+National Enquirer   
+NY Post   
+NY Times   
+Tech Radar   
+The Source   
+The Verge   
+Time   
+TMZ   
+Washington Times   
+Wired   
 
 
 # Can't get   
@@ -38,14 +38,14 @@ Vice - Prevents scraping
 XHamster - Prevents scraping  
 At&t - Prevents scraping  
     
-# Remaining Tasks
-Simplify cron job script for duplicates
-_Later:_ Stop downloading images without content
-_Later:_ Down the resolution of giant images
-_Later:_ Make sure PDFs get saved
-Get chronjob working online
-Technical text
+# Remaining Tasks   
+Simplify cron job script for duplicates   
+_Later:_ Stop downloading images without content   
+_Later:_ Down the resolution of giant images   
+_Later:_ Make sure PDFs get saved   
+Get chronjob working online   
+Technical text   
 
-# Question
-Best place to limit non-existant images? Front-end of backend?
+# Question   
+Best place to limit non-existant images? Front-end of backend?   
 
