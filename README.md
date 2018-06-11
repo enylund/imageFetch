@@ -39,12 +39,18 @@ XHamster - Prevents scraping
 At&t - Prevents scraping  
     
 # Remaining Tasks   
-Simplify cron job script for duplicates   
 _Later:_ Stop downloading images without content   
-_Later:_ Down the resolution of giant images   
 _Later:_ Make sure PDFs get saved   
-Get chronjob working online   
-Technical text   
+Get chronjob working online on Chris' server     
+Technical text to Chris   
+Put up the site at sun-scraper  
+Finish two animations together  
+switch the captions  
+Switch two times  
+One porn site to come  
+reveal text about the site  
+Fade two images  
+Finalize time rates  
 
 # Question   
 Best place to limit non-existant images? Front-end of backend?   
