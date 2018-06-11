@@ -1,7 +1,7 @@
 <?php
   include_once 'simple_html_dom.php';
 
-    fetchImages("https://www.ccn.com/","crytonews");
+    fetchImages("https://cryptonews.com/","crytonews");
 
     function fetchImages($url, $directory) {
 

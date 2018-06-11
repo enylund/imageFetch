@@ -1,9 +1,7 @@
 <?php
   include_once 'simple_html_dom.php';
 
-    // THIS IS A COMMENT. IT WONT RUN
-    fetchImages("https://www.artforum.com/","artforum");
-
+    fetchImages("https://www.techradar.com/","techradar");
 
     function fetchImages($url, $directory) {
 
@@ -11,7 +9,7 @@
       $imageDirectory = "img/".$directory;
       $date           = date("Y-m-d");
       $dateDirectory  = $imageDirectory."/".$date;
-      $regexImageName = '/[\w\.\-\$]+\/[\w\.\-\$]+(?=png|jpg|gif)\w+/';
+
 
 
       if ( !file_exists($imageDirectory) ) {
@@ -32,24 +30,25 @@
       ob_start(); // start the output buffer
       // End Cache Head
 
-      $bloglistArray = $html->find('.hp-bloglist__image');
-
       // Find all images
-      foreach($bloglistArray as $img) {
+      foreach($html->find('.feature-block-item img') as $img) {
+          $source = $img->getAttribute('data-original-mos');
 
-        preg_match_all($regexImageName, 'https://www.artforum.com/'.$img->src, $matches, PREG_SET_ORDER, 0);
-        $final_match = str_replace('/','-',$matches[0][0]);
-        $filename = $dateDirectory."/".$final_match;
+          $regexImageName = '/[\w\.\-\$]+(?=png|jpg|gif)\w+/';
+          preg_match($regexImageName, $source, $match, PREG_OFFSET_CAPTURE, 0);
 
-        if ( !file_exists($filename) ) {
+          $filename = $dateDirectory."/".$match[0][0];
+
+          if ( !file_exists($filename) ) {
             //Get the file
-            echo('<img src="https://www.artforum.com/'.$img->src.'">');
-            $content = file_get_contents('https://www.artforum.com/'.$img->src);
+            echo('<img src="'.$source.'">');
+
+            $content = file_get_contents($source);
             //Store in the filesystem.
             $fp = fopen($filename, "w");
             fwrite($fp, $content);
             fclose($fp);
-        }
+          }
       }
 
       // Start Cache Footer

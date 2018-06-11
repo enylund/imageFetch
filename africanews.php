@@ -35,16 +35,25 @@
 
         preg_match_all($regexImageName, $img->src, $matches, PREG_SET_ORDER, 0);
 
-        $filename = $dateDirectory."/".$matches[0][0];
+        list($width, $height, $type, $attr) = getimagesize($img->src);
 
-        if ( !file_exists($filename) ) {
-            //Get the file
-            echo('<img src="'.$img->src.'">');
-            $content = file_get_contents($img->src);
-            //Store in the filesystem.
-            $fp = fopen($filename, "w");
-            fwrite($fp, $content);
-            fclose($fp);
+        if($width > 1 AND $height > 1) {
+
+          $filename = $dateDirectory."/".$matches[0][0];
+
+          if ( !file_exists($filename) ) {
+              //Get the file
+              echo('<img src="'.$img->src.'">');
+              $content = file_get_contents($img->src);
+
+              //Store in the filesystem.
+              if($content !== false AND !empty($content)) {
+                $fp = fopen($filename, "w");
+                fwrite($fp, $content);
+                fclose($fp);
+              }
+          }
+
         }
       }
 

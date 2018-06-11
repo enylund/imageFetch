@@ -51,7 +51,7 @@ draw = function() {
         }
         ctx.putImageData(imageData, 0, 0);
         canvas.style.display = 'block';
-        x += 2000;
+        x += 10000;
     } else if ( x >= data.length && x <= data.length * 2 ) {
         console.log(x);
         for (var i = 0; i < data.length; i += 4) {
@@ -67,7 +67,7 @@ draw = function() {
         }
         ctx.putImageData(imageData, 0, 0);
         canvas.style.display = 'block';
-        x += 2000;
+        x += 10000;
 
     } else {
         ctx.clearRect(0, 0, clearX, clearY);
