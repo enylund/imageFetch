@@ -2,7 +2,6 @@
 
   1) Get following sites to return images:
     4chan  
-    Buzzfeed *  
     Gizmodo *  
     Vice **  
     XHamster *  
@@ -14,6 +13,7 @@
     The Nib - Made with react 
     CNN - Made with react  
     Buzzfeed - Prevents scraping  
+    4chan - Prevents scraping  
     
 
   2) Simplify cron job script for duplicates
