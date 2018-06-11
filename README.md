@@ -49,3 +49,6 @@ Technical text
 # Question   
 Best place to limit non-existant images? Front-end of backend?   
 
+# Research    
+HTML -> PDF [Article](https://ourcodeworld.com/articles/read/226/top-5-best-open-source-pdf-generation-libraries-for-php)
+
