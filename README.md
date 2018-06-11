@@ -63,3 +63,5 @@ HTML -> PDF [Article](https://ourcodeworld.com/articles/read/226/top-5-best-open
 Bottom: 1.5s  
 Top:  Tickertap speed. Fast enough to still have a flicker. (var speed = 60 @ 40000pxs)  
 
+# FINISH JUNE 20th
+
